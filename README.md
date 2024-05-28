@@ -77,10 +77,10 @@ We also include a script for PPO.
 
 We apply REBEL on two different sets of models and datasets for general chat.
 
-| Model    | Base Model | Reward Model | Dataset |
+|  | Base Model | Reward Model | Dataset |
 | -------- | ------- |  ------- |  ------- | 
-| [REBEL-OpenChat-3.5](https://huggingface.co/Cornell-AGI/REBEL-OpenChat-3.5)  |  [OpenChat-3.5](https://huggingface.co/openchat/openchat_3.5)   | [Starling-RM-7B-alpha](https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha) | [Nectar](https://huggingface.co/datasets/berkeley-nest/Nectar) |
-| [REBEL-Llama-3](https://huggingface.co/Cornell-AGI/REBEL-Llama-3) | [Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) | [FsfairX-LLaMA3-RM-v0.1](https://huggingface.co/sfairXC/FsfairX-LLaMA3-RM-v0.1) | [UltraFeedback](https://huggingface.co/datasets/openbmb/UltraFeedback) |
+| Set 1 | [OpenChat-3.5](https://huggingface.co/openchat/openchat_3.5)   | [Starling-RM-7B-alpha](https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha) | [Nectar](https://huggingface.co/datasets/berkeley-nest/Nectar) |
+| Set 2 | [Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) | [FsfairX-LLaMA3-RM-v0.1](https://huggingface.co/sfairXC/FsfairX-LLaMA3-RM-v0.1) | [UltraFeedback](https://huggingface.co/datasets/openbmb/UltraFeedback) |
 
 Our preprocessed dataset can be found at [Nectar](https://huggingface.co/datasets/jdchang/nectar_openchat_preprocess) and [UltraFeedback](https://huggingface.co/datasets/GitBag/ultrafeedback_llama3_eurus).
 
@@ -89,6 +89,14 @@ You can run REBEL on Nectar and UltraFeedback by
 ./scripts/nectar/rebel.sh
 ./scripts/ultrafeedback/rebel.sh
 ```
+
+Below is a list of models that are trained with the scripts above.
+
+| Model | #P | MMLU<br>(5-shot) | MT-Bench<br>1st Turn | MT-Bench<br>2nd Turn | MT-Bench<br>Average | AlpacaEval 2.0<br>LC Win Rate | AlpacaEval 2.0<br>Win Rate |
+| -------- | ------- |  ------- | ------- |------- |------- |------- |------- |
+| [REBEL-OpenChat-3.5](https://huggingface.co/Cornell-AGI/REBEL-OpenChat-3.5) | 7B | 63.7 | 8.54 | 7.58 | 8.06 | 17.3 | 12.8 |
+| [REBEL-Llama-3](https://huggingface.co/Cornell-AGI/REBEL-Llama-3) | 8B | 65.8 | 8.63 | 7.69 | 8.16 | 30.1 | 32.6 |
+
 
 ## RLCM
 
