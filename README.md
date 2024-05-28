@@ -73,6 +73,23 @@ We also include a script for PPO.
 ./scripts/tldr/ppo.sh
 ```
 
+## General Chat
+
+We apply REBEL on two different sets of models and datasets for general chat.
+
+| Model    | Base Model | Reward Model | Dataset |
+| -------- | ------- |  ------- |  ------- | 
+| [REBEL-OpenChat-3.5](https://huggingface.co/Cornell-AGI/REBEL-OpenChat-3.5)  |  [OpenChat-3.5](https://huggingface.co/openchat/openchat_3.5)   | [Starling-RM-7B-alpha](https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha) | [Nectar](https://huggingface.co/datasets/berkeley-nest/Nectar) |
+| [REBEL-Llama-3](https://huggingface.co/Cornell-AGI/REBEL-Llama-3) | [Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) | [FsfairX-LLaMA3-RM-v0.1](https://huggingface.co/sfairXC/FsfairX-LLaMA3-RM-v0.1) | [UltraFeedback](https://huggingface.co/datasets/openbmb/UltraFeedback) |
+
+Our preprocessed dataset can be found at [Nectar](https://huggingface.co/datasets/jdchang/nectar_openchat_preprocess) and [UltraFeedback](https://huggingface.co/datasets/GitBag/ultrafeedback_llama3_eurus).
+
+You can run REBEL on Nectar and UltraFeedback by
+```
+./scripts/nectar/rebel.sh
+./scripts/ultrafeedback/rebel.sh
+```
+
 ## RLCM
 
 Please refer to [RLCM](https://github.com/Owen-Oertell/rlcm) repo for the implementation of REBEL on RLCM.

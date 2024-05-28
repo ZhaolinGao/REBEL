@@ -1,0 +1,1 @@
+accelerate launch --config_file accelerate_cfgs/deepspeed_config.yaml --main-process-port 29079 --num_processes 8 src/nectar/rebel.py
