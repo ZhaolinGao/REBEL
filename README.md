@@ -77,12 +77,13 @@ We also include a script for PPO.
 
 We apply REBEL on two different sets of models and datasets for general chat.
 
-|  | Base Model | Reward Model | Dataset |
-| -------- | ------- |  ------- |  ------- | 
-| Set 1 | [OpenChat-3.5](https://huggingface.co/openchat/openchat_3.5)   | [Starling-RM-7B-alpha](https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha) | [Nectar](https://huggingface.co/datasets/berkeley-nest/Nectar) |
-| Set 2 | [Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) | [FsfairX-LLaMA3-RM-v0.1](https://huggingface.co/sfairXC/FsfairX-LLaMA3-RM-v0.1) | [UltraFeedback](https://huggingface.co/datasets/openbmb/UltraFeedback) |
+|  | Base Model | Reward Model | Dataset | Batch Size per Iteration |
+| -------- | ------- |  ------- |  ------- | -------- |
+| Config 1 | [OpenChat-3.5](https://huggingface.co/openchat/openchat_3.5)   | [Starling-RM-7B-alpha](https://huggingface.co/berkeley-nest/Starling-RM-7B-alpha) | [Nectar](https://huggingface.co/datasets/berkeley-nest/Nectar) | 32 |
+| Config 2 | [Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) | [FsfairX-LLaMA3-RM-v0.1](https://huggingface.co/sfairXC/FsfairX-LLaMA3-RM-v0.1) | [UltraFeedback](https://huggingface.co/datasets/openbmb/UltraFeedback) | 32 |
+| Config 3 | [Meta-Llama-3-8B-Instruct](https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) | [ArmoRM-Llama3-8B-v0.1](https://huggingface.co/RLHFlow/ArmoRM-Llama3-8B-v0.1) | [UltraFeedback](https://huggingface.co/datasets/openbmb/UltraFeedback) | 60k |
 
-Our preprocessed dataset can be found at [Nectar](https://huggingface.co/datasets/jdchang/nectar_openchat_preprocess) and [UltraFeedback](https://huggingface.co/datasets/GitBag/ultrafeedback_llama3_eurus).
+Our preprocessed dataset can be found at [Nectar](https://huggingface.co/datasets/jdchang/nectar_openchat_preprocess), [UltraFeedback](https://huggingface.co/datasets/GitBag/ultrafeedback_llama3_eurus), [Ultrafeedback-Llama-3-Armo-iter_1](https://huggingface.co/datasets/Cornell-AGI/Ultrafeedback-Llama-3-Armo-iter_1), [Ultrafeedback-Llama-3-Armo-iter_2](https://huggingface.co/datasets/Cornell-AGI/Ultrafeedback-Llama-3-Armo-iter_2), and [Ultrafeedback-Llama-3-Armo-iter_3](https://huggingface.co/datasets/Cornell-AGI/Ultrafeedback-Llama-3-Armo-iter_3).
 
 You can run REBEL on Nectar and UltraFeedback by
 ```
@@ -92,11 +93,14 @@ You can run REBEL on Nectar and UltraFeedback by
 
 Below is a list of models that are trained with the scripts above.
 
-| Model | #P | MMLU<br>(5-shot) | MT-Bench<br>1st Turn | MT-Bench<br>2nd Turn | MT-Bench<br>Average | AlpacaEval 2.0<br>LC Win Rate | AlpacaEval 2.0<br>Win Rate |
-| -------- | ------- |  ------- | ------- |------- |------- |------- |------- |
-| [REBEL-OpenChat-3.5](https://huggingface.co/Cornell-AGI/REBEL-OpenChat-3.5) | 7B | 63.7 | 8.54 | 7.58 | 8.06 | 17.3 | 12.8 |
-| [REBEL-Llama-3](https://huggingface.co/Cornell-AGI/REBEL-Llama-3) | 8B | 65.8 | 8.63 | 7.69 | 8.16 | 30.1 | 32.6 |
-
+| Model | AlpacaEval 2.0<br>LC Win Rate | AlpacaEval 2.0<br>Win Rate | MT-Bench<br>Average | MMLU<br>(5-shot) | GSM8K<br>(5-shot) |
+| :--------: | :--------: |   :--------: | :--------: |  :--------: | :--------: |
+| [REBEL-OpenChat-3.5](https://huggingface.co/Cornell-AGI/REBEL-OpenChat-3.5) | 17.3 | 12.8 | 8.06 | 63.7 | 68.8 |
+| [REBEL-Llama-3](https://huggingface.co/Cornell-AGI/REBEL-Llama-3) | 30.1 | 32.6 | 8.16 | 65.8 | 75.6 |
+| [REBEL-Llama-3-epoch_2](https://huggingface.co/Cornell-AGI/REBEL-Llama-3-epoch_2) | 31.3 | 34.2 | 7.83 | 65.4 | 75.4 |
+| [REBEL-Llama-3-Armo-iter_1](https://huggingface.co/Cornell-AGI/REBEL-Llama-3-Armo-iter_1) | 48.3 | 41.8 | 8.13 | 66.3 | 75.8 |
+| [REBEL-Llama-3-Armo-iter_2](https://huggingface.co/Cornell-AGI/REBEL-Llama-3-Armo-iter_2) | 50.0 | 48.5 | 8.07 | 65.9 | 75.4 |
+| [REBEL-Llama-3-Armo-iter_3](https://huggingface.co/Cornell-AGI/REBEL-Llama-3-Armo-iter_3) | 49.7 | 48.1 | 8.01 | 66.0 | 75.7 |
 
 ## RLCM
 
