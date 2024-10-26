@@ -25,6 +25,7 @@ wandb
 tensorboard
 pandas
 evaluate
+rouge_score
 ```
 
 ## TL;DR Summarization
