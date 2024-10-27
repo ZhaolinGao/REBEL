@@ -6,30 +6,12 @@ Zhaolin Gao, Jonathan D. Chang, Wenhao Zhan, Owen Oertell, Gokul Swamy, Kianté 
 
 ## Environment
 
-```
-torch>=2.1.0
-transformers>=4.34
-accelerate>=0.23
-peft==0.6.2
-bitsandbytes>=0.41.1
-deepspeed>=0.10.3
-tyro
-scipy
-rouge
-shortuuid
-jsonlines
-rich
-wandb
-tensorboard
-pandas
-evaluate
-rouge_score
-```
-
-You can directly install the environment with:
+To replicate the exact environment we used, we recommend installing it with the following command:
 ```
 conda env create -f environment.yml
 ```
+
+Alternatively, you can install dependencies from `requirements.txt`, though this may lead to compatibility issues.
 
 ## TL;DR Summarization
 
