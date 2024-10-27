@@ -28,6 +28,11 @@ evaluate
 rouge_score
 ```
 
+You can directly install the environment with:
+```
+conda env create -f environment.yml
+```
+
 ## TL;DR Summarization
 
 #### Supervised Fine-tuning (SFT)
