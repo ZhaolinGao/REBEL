@@ -1,6 +1,4 @@
-# REBEL
-
-This repo covers the implementation for our paper [REBEL](https://arxiv.org/abs/2404.16767). 
+# [REBEL](https://arxiv.org/abs/2404.16767): Reinforcement Learning via Regressing Relative Rewards
 
 Zhaolin Gao, Jonathan D. Chang, Wenhao Zhan, Owen Oertell, Gokul Swamy, Kianté Brantley, Thorsten Joachims, J. Andrew Bagnell, Jason D. Lee, Wen Sun. "REBEL: Reinforcement Learning via Regressing Relative Rewards"
 
