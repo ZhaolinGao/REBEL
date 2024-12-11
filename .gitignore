@@ -7,6 +7,8 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+runs/
+wandb/
 .Python
 build/
 develop-eggs/

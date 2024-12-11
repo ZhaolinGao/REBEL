@@ -8,10 +8,9 @@ Zhaolin Gao, Jonathan D. Chang, Wenhao Zhan, Owen Oertell, Gokul Swamy, Kianté 
 
 To replicate the exact environment we used, we recommend installing it with the following command:
 ```
-conda env create -f environment.yml
+conda env create -f ./envs/rebel_env.yml
+conda env create -f ./envs/vllm_env.yml
 ```
-
-Alternatively, you can install dependencies from `requirements.txt`, though this may lead to compatibility issues.
 
 ## TL;DR Summarization
 
