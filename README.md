@@ -4,6 +4,8 @@ Zhaolin Gao, Jonathan D. Chang, Wenhao Zhan, Owen Oertell, Gokul Swamy, Kianté 
 
 ![front page](./figs/rebel_ffig.png)
 
+Check out our detailed blog post on reproducing the experiments [here](https://huggingface.co/blog/GitBag/rebel).
+
 ## Environment
 
 To replicate the exact environment we used, we recommend installing it with the following command:
